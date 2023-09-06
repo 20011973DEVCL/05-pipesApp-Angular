@@ -64,5 +64,6 @@ export class UncommonPageComponent {
       console.log('Tenemos data en la Promesa');
     }, 3500);
   })
+  //#endregion
 
 }
