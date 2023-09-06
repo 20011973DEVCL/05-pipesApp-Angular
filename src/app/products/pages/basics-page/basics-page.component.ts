@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class BasicsPageComponent {
 
   public nameLower: string = 'maira y fernanda';
-  public nameUpper: string = 'maira y fernanda';
-  public titleCase: string = 'maira y fernanda';
+  public nameUpper: string = 'MAIRA Y FERNANDA';
+  public titleCase: string = 'mAIrA y feRNanDa';
+
+  public customDate: Date = new Date();
 }

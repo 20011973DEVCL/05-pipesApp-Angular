@@ -1,1 +1,85 @@
-<p>uncommon-page works!</p>
+<p-panel header="Pipes Básicos" class="p-1">
+  <h1>Pipes No tan Comunes</h1>
+  <p>
+    Pípes incluídos en Angolar - Usualmente en el Common Modole
+  </p>
+</p-panel>
+
+<div class="grid mt-2">
+  <!-- i18nSelect Pipe-->
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="=i18nSelect Pipe" [toggleable]="true">
+      <p>
+        Saludos {{ name }}, es un place {{ gender | i18nSelect:invitationMap}}
+        a nuestro evento.
+        <br>
+      </p>
+      <p-button
+        (click)="changeClient()"
+        label="Cambiar persona"
+      ></p-button>
+    </p-fieldset>
+  </div>
+
+  <!-- i18nPlural Pipe-->
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="=i18nPlural Pipe" [toggleable]="true">
+      <p>
+        Actualmemnte {{ clientes.length | i18nPlural:clientsMap }} esperando
+      </p>
+
+      <p-button
+        (click)="deleteClient()"
+        label="Borrar cliente"
+      ></p-button>
+    </p-fieldset>
+  </div>
+
+  <!-- Slice Pipe-->
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="=Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>{{ clientes}} </pre>
+
+      <b>slice:0:2</b>
+      <pre>{{ clientes | slice:0:2 }} </pre>
+
+      <b>slice:3:5</b>
+      <pre>{{ clientes | slice:3:5 }} </pre>
+
+      <b>slice:0:-2</b>
+      <pre>{{ clientes | slice:0:-2 }} </pre>
+    </p-fieldset>
+  </div>
+
+  <!-- Json Pipe-->
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="=Json Pipe" [toggleable]="true">
+      <pre>
+        {{ person | json}}
+      </pre>
+    </p-fieldset>
+  </div>
+
+  <!-- KeyValue Pipe-->
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="=KeyValue Pipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          <b>{{ item.key }}</b> .- {{ item.value}}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+
+  <!-- Async Pipe-->
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="=Async Pipe" [toggleable]="true">
+      <pre *ngIf="!(myObserableTimer | async)">Resolviendo Observable</pre>
+      <pre>{{ myObserableTimer | async }}</pre>
+
+      <pre *ngIf="!(promiseValue | async)">Resolviendo Promesa</pre>
+      <pre>{{ promiseValue | async }}</pre>
+    </p-fieldset>
+  </div>
+</div>

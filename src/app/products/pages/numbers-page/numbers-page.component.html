@@ -1,1 +1,27 @@
-<p>numbers-page works!</p>
+<p-panel header="Pipes Numericos" class="p-1">
+  <h1>Pipes Básicos</h1>
+  <p>
+    Pípes incluídos en Angolar - Usualmente en el Common Modole
+  </p>
+</p-panel>
+
+<div class="grid mt-2">
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas Netas" subheader="del Presente año">
+      {{ totalSells | number:'1.2-2' }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas Brutas" subheader="del Presente año">
+      {{ totalSells | currency:'CLP':'symbol-narrow':'1.4-4' }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Ganacia Percentual" subheader="del Presente año">
+      {{ percent | percent:'1.2-2' }}
+    </p-card>
+  </div>
+
+</div>
